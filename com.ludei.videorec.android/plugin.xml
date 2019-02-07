@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cocoon-plugin-videorec-android"
+    version="1.0.2">
+
+    <name>Cocoon Android VideoRec plugin</name>
+    <description>Cocoon plugin video recording support.</description>
+    <license>Copyright Ludei</license>
+    <keywords>cordova, ludei, cocoon, application</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <engines>
+      <engine name="cordova-android" version=">=4" />
+      <engine name="cordova-plugman" version=">=4.2.0" />
+    </engines>
+
+    <platform name="android">
+        <hook type="after_plugin_install" src="hooks/after_plugin_install.js" />
+
+        <source-file src="src/LudeiExtensionVideoRec.jar" target-dir="libs" framework="true" />
+        <source-file src="src/everyplay.jar" target-dir="libs" framework="true" />
+
+        <source-file src="src/armeabi-v7a/libeveryplay.so" target-dir="libs/armeabi-v7a" framework="true" />
+        
+        <source-file src="src/x86/libeveryplay.so" target-dir="libs/x86" framework="true" />
+    </platform>
+</plugin>

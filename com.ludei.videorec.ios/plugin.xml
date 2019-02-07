@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cocoon-plugin-videorec-ios"
+    version="1.0.2">
+
+    <name>Cocoon iOS VideoRec plugin</name>
+    <description>Cocoon plugin video recording support.</description>
+    <license>Copyright Ludei</license>
+    <keywords>cordova, ludei, cocoon, application</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <engines>
+      <engine name="cordova-android" version=">=4" />
+      <engine name="cordova-plugman" version=">=4.2.0" />
+    </engines>
+
+    <platform name="ios">
+        <source-file src="src/libLudeiExtensionVideoRec.a" framework="true" />
+        <source-file src="src/Everyplay" framework="true" />    
+        <framework src="Social.framework" weak="true" />
+        <framework src="MessageUI.framework" weak="true" />
+
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTO_LIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>  
+
+        <preference name="PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+            <string>$PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION</string>
+        </config-file> 
+    </platform>
+</plugin>
